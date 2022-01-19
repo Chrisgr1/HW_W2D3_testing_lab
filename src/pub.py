@@ -1,5 +1,5 @@
 from src.drink import Drink
-from src.customers import Customers
+from src.customer import Customer
 
 class Pub:
     def __init__(self, name, till, drinks):
@@ -16,6 +16,10 @@ class Pub:
     def buy_drink(self, drinks):
         self.take_money(drinks)
         self.remove_drink(drinks)
-        self.customers.minus_c_wallet(drinks)
+        self.customer1.minus_c_wallet(drinks)
 
+    def check_age(self, customer):
+        if customer.age < 18:
+            return False
+        return True
 
