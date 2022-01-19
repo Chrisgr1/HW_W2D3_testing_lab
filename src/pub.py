@@ -10,13 +10,8 @@ class Pub:
     def take_money(self, drinks):
         self.till += drinks
 
-    def remove_drink(self, drinks):
-        self.drinks.remove(drinks)
-
-    def buy_drink(self, drinks):
-        self.take_money(drinks)
-        self.remove_drink(drinks)
-        self.customer1.minus_c_wallet(drinks)
+    def remove_drink(self, drink):
+        self.drinks.remove(drink)
 
     def check_age(self, customer):
         if customer.age < 18:

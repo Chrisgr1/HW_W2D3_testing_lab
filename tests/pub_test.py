@@ -27,14 +27,9 @@ class TestPub(unittest.TestCase):
         self.pub.remove_drink('Grey Goose')
         self.assertEqual(['The Famous Grouse'], self.pub.drinks)
 
-    def test_buy_drink(self):
-         self.pub.remove_drink('Grey Goose')
-         self.assertEqual(['The Famous Grouse'], self.pub.drinks)
-         self.pub.take_money(5.00)
-         self.assertEqual(105.00, self.pub.till)
-         self.customer1.minus_c_wallet(self.customer1.wallet, self.drink.price)
-         self.assertEqual(20.00,self.customer1.wallet)
-    
+    # move this test from TestPub to TestCustomer
+    # changed the func: I think remove_drink and take_money should be call inside the src buy_drink func instead of inside the test?
+
     def test_check_age_true(self):
         result = self.pub.check_age(self.customer1)
         self.assertEqual(True, result)
